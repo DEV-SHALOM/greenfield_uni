@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/img/Greenfield Logo.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenfield University</title>
+  <meta name="description" content="A Directory of Greenfield University Electronic Databases and Library Resources" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/script.js" defer></script>
+  <style>
+    * {
+      font-family: "Inter", sans-serif;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f3f4f6;
+    }
+
+    .logout-btn {
+      display: block;
+      margin-left: auto;
+      background: white;
+      color: black;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    .logout-btn:hover {
+      background: #f3f4f6;
+    }
+
+    .hero-logo {
+      display: block;
+      margin: 40px auto 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    @media (min-width: 640px) {
+      .hero-logo { width: 120px; height: 120px; }
+    }
+
+    @media (min-width: 768px) {
+      .hero-logo { width: 160px; height: 160px; }
+    }
+
+    .hero-title {
+      color: white;
+      text-align: center;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-top: 16px;
+      padding: 16px 8px;
+    }
+
+    @media (min-width: 640px) {
+      .hero-title { font-size: 1.5rem; }
+    }
+
+    @media (min-width: 768px) {
+      .hero-title { font-size: 2.25rem; }
+    }
+
+    .hero-subtitle {
+      background: #0c0e41;
+      color: white;
+      text-align: center;
+      font-size: 1.125rem;
+      font-weight: 500;
+      margin-top: 8px;
+      padding: 16px;
+      border-radius: 8px;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: 768px) {
+      .hero-subtitle { font-size: 1.5rem; }
+    }
+
+    .content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 16px;
+      margin-top: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .content { padding: 24px; }
+    }
+
+    .cards-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card-outer {
+      background: rgba(12, 14, 65, 0.7);
+      padding: 2px;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .card-outer:hover {
+      transform: scale(1.01);
+    }
+
+    .card-inner {
+      background: white;
+      border-radius: 6px;
+      padding: 16px;
+    }
+
+    .card-inner img {
+      height: 100px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @media (min-width: 768px) {
+      .card-inner img { height: 80px; }
+    }
+
+    .card-inner p {
+      margin-top: 16px;
+      color: black;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .card-inner p { font-size: 1.125rem; }
+    }
+
+    .visit-btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 8px 16px;
+      border: 2px solid #0c0e41;
+      color: #0c0e41;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .visit-btn:hover {
+      background: #0c0e41;
+      color: white;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================== LOGIN PAGE ==================== -->
+  <div id="login-page" class="min-h-screen bg-[url(/img/GreenField\ Main-building-Admin.jpeg)] bg-no-repeat bg-cover bg-center flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
+      <div class="text-center mb-8">
+        <img
+          alt="Greenfield University"
+          class="mx-auto size-20 rounded-full mb-4"
+          src="/img/Greenfield Logo.jpeg"
+        />
+        <h1 class="text-2xl font-bold text-[#0c0e41]">GREENFIELD UNIVERSITY</h1>
+        <p class="text-gray-600 mt-2">Library Databases & Electronic Resources</p>
+      </div>
+
+      <form id="login-form">
+        <div class="mb-4">
+          <label for="username" class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+          <input
+            id="username"
+            type="text"
+            placeholder="Enter institution username"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0c0e41] focus:border-transparent outline-none transition duration-200"
+            required
+          >
+        </div>
+
+        <div class="mb-6">
+          <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+          <div class="relative">
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter institution password"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0c0e41] focus:border-transparent outline-none transition duration-200 pr-12"
+              required
+            >
+            <button
+              type="button"
+              onclick="togglePassword()"
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#0c0e41] transition duration-200 focus:outline-none"
+              aria-label="Toggle password visibility"
+            >
+              <svg id="eye-open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+              <svg id="eye-closed" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-[#0c0e41] text-white py-3 px-4 rounded-lg font-semibold hover:bg-[#1a1f6b] transition duration-300 focus:ring-2 focus:ring-[#0c0e41] focus:ring-offset-2"
+        >
+          Login to Access Resources
+        </button>
+
+        <p id="error-message" class="hidden text-red-500 text-center mt-4 text-sm">
+          Invalid username or password. Please contact the library administrator.
+        </p>
+      </form>
+
+      <div class="mt-6 text-center text-sm text-gray-500">
+        <p>For login assistance, please contact the University Library</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN LIBRARY PAGE ==================== -->
+  <div id="main-page" class="hidden">
+
+    <!-- Hero Banner -->
+    <div class="bg-[url(/img/GreenField\ Main-building-Admin.jpeg)] bg-black/75 bg-blend-overlay bg-cover py-10 px-3 md:px-6">
+      <button class="logout-btn" id="logout-btn">Logout</button>
+      <img class="hero-logo" src="/img/Greenfield Logo.jpeg" alt="Greenfield University" />
+      <h1 class="hero-title">GREENFIELD UNIVERSITY</h1>
+      <h2 class="hero-subtitle">GREENFIELD UNIVERSITY LIBRARY DATABASES AND ELECTRONIC RESOURCES</h2>
+    </div>
+
+    <!-- Cards -->
+    <div class="content">
+      <div class="cards-wrapper">
+
+        <div class="card-outer">
+          <div class="card-inner">
+            <img src="https://pue-library.vercel.app/assets/lexisNexis-DkxVz73U.png" alt="Lexis+" />
+            <p><span style="font-weight: bold">Lexis+</span> a legal research platform. Lexis+ provides access to a vast database of legal information, including case law, statutes, and articles. It's commonly used by legal professionals, researchers, and students.</p>
+            <a href="https://plus.lexis.com/uk" class="visit-btn" target="_blank">visit now</a>
+          </div>
+        </div>
+
+        
+
+        <div class="card-outer">
+          <div class="card-inner">
+            <img src="https://pue-library.vercel.app/assets/freeEbooks-CNn2TkH9.png" alt="Free Law eBook Resources" />
+            <p><span style="font-weight: bold">Free Law eBook Resources</span> 50+ Law Books for Free: This platform offers a wide variety of law books in PDF format, covering topics such as administrative law, labor law, and international law.</p>
+            <a href="https://directory.doabooks.org/discover?query=Law&locale-attribute=en" class="visit-btn" target="_blank">visit now</a>
+          </div>
+        </div>
+
+        <div class="card-outer">
+          <div class="card-inner">
+            <img src="https://pue-library.vercel.app/assets/worldLII-CxbSNA2N.gif" alt="WorldLII" />
+            <p><span style="font-weight: bold">World Legal Information Institute (WorldLII)</span> aims to provide free access to worldwide law, and has been developed collaboratively by various Legal Information Institutes around the world.</p>
+            <a href="https://www.worldlii.org/" class="visit-btn" target="_blank">visit now</a>
+          </div>
+        </div>
+
+      
+
+      </div>
+    </div>
+  </div>
+
+  
+
+</body>
+</html>
