@@ -1,5 +1,5 @@
-const HASHED_USERNAME = "d2e1280695b239dbce713414159bafe4f4868a790aee802d9146677ddafcf4c2";
-const HASHED_PASSWORD = "ece4e662f6d220b1e795fb3bfd504620f384b8abe4b5fac564f6e59731cef763";
+const HASHED_USERNAME = "f9bc2b8faf09d32e2600eded378adaa0a13351af3057c54c4a4442d9c2478583";
+const HASHED_PASSWORD = "35e2af5fd8123992ad4068ac8c5e03414243ffbdc4fc8d51a3752862e88b3f30";
 
 async function hashValue(value) {
   const encoder = new TextEncoder();
